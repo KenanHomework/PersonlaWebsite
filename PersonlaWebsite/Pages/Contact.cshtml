@@ -1,0 +1,41 @@
+﻿@page
+@model PersonlaWebsite.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<link rel="stylesheet" href="~/css/contact-style.css" asp-append-version="true" />
+
+
+<div class="form-area">
+    <div class="contact-form">
+        <span class="heading">Contact Me</span>
+        <form method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required="required">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required="required" pattern="\b[\w\.-]+@@[\w\.-]+\.\w{2,4}\b">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required="required"></textarea>
+            <button class="submit-button" type="submit"><span>SUBMIT</span></button>
+        </form>
+    </div>
+
+</div>
+<div class="code-area">
+    {
+    "name": "<span id="name-code">John Doe</span>",
+    "email": {
+    "value": "<span id="email-code">jo@hnd.oe</span>",
+    "valid": <span id="email-valid-code">true</span>
+    },
+    "message": {
+    "text": "<span id="message-code">Hello World</span>",
+    "count": <span id="count">11</span>
+    "maxlength": 255
+    },
+    "submitted":false
+    }
+</div>
+
+
+<script src="~/js/contact-script.js" asp-append-version="true"></script>

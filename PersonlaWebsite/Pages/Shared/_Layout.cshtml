@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PersonlaWebsite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/CommonStyle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PersonlaWebsite.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="main-text">Kanan Yusubov</div>
+        <nav>
+            <a id="home" class="redirect-page-header"       asp-page="Index"    >Home</a>
+            <a id="about" class="redirect-page-header"      asp-page="About"     >About</a>
+            <a id="skills" class="redirect-page-header"     asp-page="Skills"     >Skills</a>
+            <a id="projects" class="redirect-page-header "  asp-page="Projects"     >Projects</a>
+            <a id="contact" class="redirect-page-header"    asp-page="Contact"      >Contact</a>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="border-top footer text-muted">
+        <div class="footer-social">
+            <a href="mailto:kananysbv@gmail.com" target="_blank" class="redirect-social-footer">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/KenanHomework" target="_blank" class="redirect-social-footer">
+                <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/kanan-yusubov-33b975219/" target="_blank" class="redirect-social-footer">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="copyright">© <span id="year"></span> Kanan Yusubov All Rights Reserved</div>
+        <nav class="footer-nav">
+            <a class="redirect-page-footer">Home</a>
+            <a class="redirect-page-footer">About</a>
+            <a class="redirect-page-footer">Skills</a>
+            <a class="redirect-page-footer">Projects</a>
+            <a class="redirect-page-footer">Contact</a>
+        </nav>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

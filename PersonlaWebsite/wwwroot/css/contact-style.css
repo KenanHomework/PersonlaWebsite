@@ -1,0 +1,145 @@
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 135px);
+}
+
+.form-area {
+    width: 30%;
+    height: 500px;
+}
+
+.code-area {
+    font-size: 20px;
+    width: 30%;
+    height: 500px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: "Source Code Pro", monospace;
+    background-color: #1c0c2e;
+    white-space: pre-wrap;
+}
+
+.contact-form {
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #383838;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-form label {
+    color: #ffffff;
+}
+
+.contact-form .heading {
+    font-size: 24px;
+    color: var(--second-text);
+    margin-bottom: 12px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    font-family: "Roboto Condensed",sans-serif;
+    letter-spacing: 1px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+    width: 95%;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #bfbfbf;
+}
+
+.contact-form input:focus:invalid, .contact-form textarea:focus:invalid,
+.contact-form input:invalid, .contact-form textarea:invalid{
+    box-shadow:0 0 10px red;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    box-shadow:0 0 10px var(--main-color);
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+button[type="submit"] {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #183153;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: none;
+}
+
+button[type="submit"]:after {
+    content: " ";
+    width: 0;
+    height: 100%;
+    background: var(--main-color);
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+}
+
+button[type="submit"]:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+button[type="submit"] span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 18px 25px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover span {
+    color: #183153;
+    animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
